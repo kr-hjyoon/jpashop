@@ -21,8 +21,6 @@ public class JpaMain {
             book.setAuthor("Mr 김 ");
             em.persist(book);
 
-
-
             tx.commit();
         } catch (Exception e) {
             tx.rollback();

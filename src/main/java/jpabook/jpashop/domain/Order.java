@@ -3,6 +3,8 @@ package jpabook.jpashop.domain;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+import static javax.persistence.FetchType.*;
+
 @Entity
 @Table(name="ORDERS")
 public class Order  extends  BaseEntity  {
@@ -14,7 +16,7 @@ public class Order  extends  BaseEntity  {
         @Column(name="MEMBER_ID")               // 외래키를 아래 객체로 연관관계로 변경
         private  Long memberId;
 */
-        @ManyToOne
+        @ManyToOne(fetch= LAZY)
         @JoinColumn(name="MEMBER_ID")
         private Member member;
         private LocalDateTime orderTime;
